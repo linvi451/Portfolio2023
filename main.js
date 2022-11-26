@@ -44,8 +44,7 @@ function roll(){
     console.log(i);
 };
 
-
-// //페이저에 마우스가 떠났을 때, 이미지 재시작
+//클릭이벤트
 imageLines.forEach((imageLine,index)=>imageLine.addEventListener('click',()=>{
     console.log(index);
     clearInterval(rolling);
