@@ -46,14 +46,14 @@ ul,ol {list-style: none;}
     left:0;
     overflow: hidden;
     opacity:0 ;
-    transition: 0.2s;
+    transition: 2s;
 
 }
 /*이미지 롤링 애니메이션*/
 #imageRoll>li.on{
-    visibility: visible;
     opacity:1;
-    transition: 0.5s;
+    transition: 2s;
+    z-index: 999;
 }
 #selectBox{
     height:350px;
