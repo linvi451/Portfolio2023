@@ -27,15 +27,35 @@ forList.forEach((forL,index)=>forL.addEventListener('click',()=>{
 //이미지 리스트
 const imageWrap = document.querySelector('#imageRoll');
 const imageRolles = document.querySelectorAll('#imageRoll>li');
+const imageLines = document.querySelectorAll('#imageLine>li');
 const imageNum = imageRolles.length;
-let i=0;
-const rolling = setInterval(()=>{
-    if(i>=imageNum-1){
-        i=0;
-    }else{
-        i++;
-    } 
+const rolling = setInterval(roll,3000);
+let index=0;
+//공통부분 함수지정
+function imageRoll(){
     imageRolles.forEach(imageRoll=>imageRoll.classList.remove('on'));
-    imageRolles[i].classList.add('on');
-},3000);
+    imageLines.forEach(imageLine=>imageLine.classList.remove('on'));
+    imageLines[index].classList.add('on');
+    imageRolles[index].classList.add('on');
+}
+//이미지 롤링
+function roll(){
+    index++;
+    if(index>=imageNum){
+        index=0;
+    } 
+    imageRoll();
+};
+roll();
+//페이저에 마우스가 갔을 때, 이미지 정지
+imageLines.forEach((imageLine,index)=>imageLine.addEventListener('mouseenter',()=>{
+    clearInterval(rolling);
+    console.log(index);
+}));
+imageLines.forEach((imageLine,index)=>imageLine.addEventListener('mouseleave',()=>{
+    setInterval(roll,3000);
+    console.log(index);
+    
+}));
+//페이저에 마우스가 떠났을 때, 이미지 재시작
 
