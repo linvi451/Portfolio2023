@@ -23,3 +23,19 @@ forList.forEach((forL,index)=>forL.addEventListener('click',()=>{
     listBoxes.forEach(listBox=>listBox.classList.remove('selected'))
     listBoxes[index].classList.add('selected');
 }));
+
+//이미지 리스트
+const imageWrap = document.querySelector('#imageRoll');
+const imageRolles = document.querySelectorAll('#imageRoll>li');
+const imageNum = imageRolles.length;
+let i=0;
+const rolling = setInterval(()=>{
+    if(i>=imageNum-1){
+        i=0;
+    }else{
+        i++;
+    } 
+    imageRolles.forEach(imageRoll=>imageRoll.classList.remove('on'));
+    imageRolles[i].classList.add('on');
+},3000);
+

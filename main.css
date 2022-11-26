@@ -17,11 +17,11 @@ ul,ol {list-style: none;}
 
 /*mainImg*/
 #mainImg{
+    margin-top:70px;
     width:1903px;
     height:600px;
     background-color: antiquewhite;
     position:relative;
-    overflow: hidden;
 }
 #mainTitle{
     position:absolute;
@@ -30,15 +30,30 @@ ul,ol {list-style: none;}
     margin-left:-324px;
     font-size:50px;
     font-family:'Song Myung';
+    color:#fff;
+    z-index: 99999999999;
 }
 #imageRoll{
-    width:7612px;
+    width:px;
     height:600px;
+    position:relative;
 }
 #imageRoll>li{
     width:1903px;
     height:600px;
-    float: left;
+    position:absolute;
+    top:0;
+    left:0;
+    overflow: hidden;
+    opacity:0 ;
+    transition: 0.2s;
+
+}
+/*이미지 롤링 애니메이션*/
+#imageRoll>li.on{
+    visibility: visible;
+    opacity:1;
+    transition: 0.5s;
 }
 #selectBox{
     height:350px;
