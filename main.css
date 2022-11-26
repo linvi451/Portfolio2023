@@ -75,7 +75,7 @@ ul,ol {list-style: none;}
 }
 
 #imageLine>li:hover{
-    opacity: 1;
+    opacity:1;
     background-color: #fff;
     transition: 2s;
 }
