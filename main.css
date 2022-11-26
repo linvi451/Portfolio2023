@@ -13,7 +13,7 @@ ul,ol {list-style: none;}
 #wrap{width:1903px;}
 .clear::after{content:""; clear:both; display: block;}
 /*여기서부터 메인 내용*/
-/*---------------------herder--------------------------*/
+/*---------------------슬라이더--------------------------*/
 
 /*mainImg*/
 #mainImg{
@@ -48,6 +48,36 @@ ul,ol {list-style: none;}
     opacity:0 ;
     transition: 2s;
 
+}
+/*--------------------이미지바----------------------------*/
+#imageLine{
+    position:absolute;
+    left:50%;
+    bottom:10px;
+    height:20px;
+    margin-left:-240px;
+    z-index: 988888899;
+}
+#imageLine>li{
+    width:100px;
+    height:10px;
+    margin: 0px 10px;
+    background-color: #fff;
+    opacity: 0.2;
+    float: left;
+    transition: 2s;
+    z-index: 988888899;
+}
+#imageLine>li.on{
+    opacity: 1;
+    background-color: #fff;
+    transition: 2s;
+}
+
+#imageLine>li:hover{
+    opacity: 1;
+    background-color: #fff;
+    transition: 2s;
 }
 /*이미지 롤링 애니메이션*/
 #imageRoll>li.on{
