@@ -46,13 +46,11 @@ function roll(){
 
 //클릭이벤트
 imageLines.forEach((imageLine,index)=>imageLine.addEventListener('click',()=>{
-    console.log(index);
     clearInterval(rolling);
     imageRolles.forEach(imageRoll=>imageRoll.classList.remove('on'));
     imageLines.forEach(imageLine=>imageLine.classList.remove('on'));
     imageLines[index].classList.add('on');
     imageRolles[index].classList.add('on');
-    console.log(index);
-    setInterval(roll,5000)
+    setTimeout(setInterval(roll,3000),2000);
 }));
 
