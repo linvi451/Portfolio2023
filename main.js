@@ -29,7 +29,6 @@ const imageWrap = document.querySelector('#imageRoll');
 const imageRolles = imageWrap.querySelectorAll('li');
 const imageButtons = document.querySelectorAll('#imageLine>li');
 const imageNum = imageRolles.length;
-console.log(imageButtons);
 //let rolling = setInterval(roll,3000);;
 let paused = false;
 let index=0;
@@ -43,19 +42,19 @@ function rollPage(){
             index=0;
         } 
         updateRolling();
-        console.log(index);
     },3000);
 };
 //이미지 클릭
 function stopAutoRolling(){
-    let i= index;
-    clearInterval(rolling);
+    if(paused==true){
+        // rollPage();
+        clearInterval(rolling);
+    }
 };
 function movePageRollig(){
-    if(!paused){
+    if(paused==false){
         rollPage();
     }
-
 }
 //변경 함수
 function updateRolling(){
@@ -67,17 +66,18 @@ function updateRolling(){
     imageRolles[index].classList.add('on');
 }
 //클릭이벤트
-imageButtons.forEach((imageButton,i)=>imageLine.addEventListener('click',()=>{
+imageButtons.forEach((imageButton,index)=>imageButton.addEventListener('click',()=>{
     paused=true;
     stopAutoRolling();
-    imageRolles.forEach((imageRoll,i)=>{
+    console.log(paused);
+    imageRolles.forEach((imageRoll,index)=>{
         imageRoll.classList.remove('on')
-        imageButtons[i].classList.remove('on');
+        imageButtons[index].classList.remove('on');
     });
-    imageButtons[i].classList.add('on');
-    imageRolles[i].classList.add('on');
+    imageButtons[index].classList.add('on');
+    imageRolles[index].classList.add('on');
     setTimeout(() => {
-        paused = false; 
-        movePageRollig();
-    }, 1000);
+        paused = false;
+        movePageRollig(); 
+    }, 3000);
 }));
