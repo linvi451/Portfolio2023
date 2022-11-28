@@ -35,7 +35,7 @@ let index=0;
 let rolling;
 movePageRollig();
 function rollPage(){
-    pause = false;
+    paused = false;
     rolling = setInterval(()=>{
         index++;
         if(index>=imageNum){
