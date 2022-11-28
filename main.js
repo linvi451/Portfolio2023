@@ -68,7 +68,7 @@ imageLines.forEach((imageLine,index)=>imageLine.addEventListener('click',()=>{
     updateRolling();
     console.log(index);
     setTimeout(() => {
-        pause = false;
+        paused = false;
         movePageRollig();
     }, 1000);
 }));
