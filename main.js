@@ -26,53 +26,50 @@ forList.forEach((forL,index)=>forL.addEventListener('click',()=>{
 
 //이미지 리스트
 const imageWrap = document.querySelector('#imageRoll');
-const imageRolles = document.querySelectorAll('#imageRoll>li');
+const imageRolles = imageWrap.querySelectorAll('li');
 const imageLines = document.querySelectorAll('#imageLine>li');
 const imageNum = imageRolles.length;
 //let rolling = setInterval(roll,3000);;
-let pause = false;
+let paused = false;
 let index=0;
 let rolling;
-move();
-function roll(){
+movePageRollig();
+function rollPage(){
     pause = false;
     rolling = setInterval(()=>{
         index++;
         if(index>=imageNum){
             index=0;
         } 
-        update();
+        updateRolling();
     },3000);
 };
 //이미지 클릭
-function rollStop(){
+function stopAutoRolling(){
 
     clearInterval(rolling);
 };
-function move(){
-    if(!pause){
-        roll();
+function movePageRollig(){
+    if(!paused){
+        rollPage();
     }
 }
 //변경 함수
-function update(){
-    imageRolles.forEach(imageRoll=>imageRoll.classList.remove('on'));
-    imageLines.forEach(imageLine=>imageLine.classList.remove('on'));
-    imageLines[index].classList.add('on');
-    imageRolles[index].classList.add('on');
+function updateRolling(){
+    imageRolles.forEach((imageRoll,index)=>{
+        imageRoll.classList.remove('on')
+        imageLines[index].classList.add('on');
+    });
 }
 //클릭이벤트
 imageLines.forEach((imageLine,index)=>imageLine.addEventListener('click',()=>{
-    pause=true;
-    rollStop();
-    imageRolles.forEach(imageRoll=>imageRoll.classList.remove('on'));
-    imageLines.forEach(imageLine=>imageLine.classList.remove('on'));
-    imageLines[index].classList.add('on');
-    imageRolles[index].classList.add('on');
+    paused=true;
+    stopAutoRolling();
+    updateRolling();
     console.log(index);
     setTimeout(() => {
         pause = false;
-        move();
+        movePageRollig();
     }, 1000);
 }));
 
