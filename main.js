@@ -4,7 +4,6 @@ const signInBox= document.querySelector('#signInBox');
 const logInBtn = document.querySelector('#logIn');
 
 logInBtn.addEventListener('click',(e)=>{
-    e.preventDefault()
     // signInWindow.classList.remove('noShow');
     signInWindow.classList.toggle('show');
 })
@@ -33,6 +32,7 @@ const imageNum = imageRolles.length;
 let paused = false;
 let index=0;
 let rolling;
+//이미지 페이드인 함수
 movePageRollig();
 function rollPage(){
     paused = false;
@@ -40,6 +40,7 @@ function rollPage(){
         index++;
         if(index>=imageNum){
             index=0;
+            
         } 
         updateRolling();
     },3000);
@@ -66,10 +67,10 @@ function updateRolling(){
     imageRolles[index].classList.add('on');
 }
 //클릭이벤트
-imageButtons.forEach((imageButton,index)=>imageButton.addEventListener('click',()=>{
+imageButtons.forEach((imageButton,index)=>imageButton.addEventListener('click',(e)=>{
     paused=true;
+    let imageIndex = imageRolles[index];
     stopAutoRolling();
-    console.log(paused);
     imageRolles.forEach((imageRoll,index)=>{
         imageRoll.classList.remove('on')
         imageButtons[index].classList.remove('on');
@@ -77,7 +78,64 @@ imageButtons.forEach((imageButton,index)=>imageButton.addEventListener('click',(
     imageButtons[index].classList.add('on');
     imageRolles[index].classList.add('on');
     setTimeout(() => {
+        imageIndex=index;
         paused = false;
         movePageRollig(); 
-    }, 3000);
+    }, 1000);
 }));
+//섹션 3 이미지 롤링
+const infoImageRollingWrap = document.querySelector('.infoBox');
+const infoImageRoll = infoImageRollingWrap.querySelectorAll('li');
+const infoImageButtons = document.querySelectorAll('#infoBtn>li');
+const infoImageRollNum = infoImageRoll.length;
+//이미지 롤링 함수;
+function rollPage2(){
+    let index=0;
+    paused = false;
+    rolling = setInterval(()=>{
+        index++;
+        if(index>=infoImageRollNum){
+            index=0;
+            
+        } 
+        updateRolling2();
+
+    },3000);
+};
+//이미지 클릭
+function stopAutoRolling2(){
+    if(paused==true){
+        // rollPage();
+        clearInterval(rolling);
+    }
+};
+function movePageRollig2(){
+    if(paused==false){
+        rollPage2();
+    }
+}
+movePageRollig2();
+function updateRolling2(){
+    infoImageRoll.forEach((imageRoll,index)=>{
+        imageRoll.classList.remove('on')
+        infoImageButtons[index].classList.remove('on');
+    });
+    infoImageButtons[index].classList.add('on');
+    infoImageRoll[index].classList.add('on');
+}
+infoImageButtons.forEach((infoImageButton,index)=>infoImageButton.addEventListener('click',()=>{
+    paused=true;
+    let imageIndex = infoImageRoll[index];
+    stopAutoRolling2();
+    infoImageRoll.forEach((imageRoll,index)=>{
+        imageRoll.classList.remove('on')
+        infoImageButtons[index].classList.remove('on');
+    });
+    infoImageButtons[index].classList.add('on');
+    infoImageRoll[index].classList.add('on');
+    setTimeout(() => {
+        imageIndex=index;
+        paused = false;
+        movePageRollig2(); 
+    }, 2000);
+}))

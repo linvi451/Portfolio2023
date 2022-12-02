@@ -9,6 +9,7 @@
 }
 *{margin:0; padding:0;  box-sizing:border-box; font-family: 'GmarketSansMedium';}
 a{text-decoration: none; color:inherit}
+a:hover{color: #062f62;}
 ul,ol {list-style: none;}
 #wrap{width:1903px;}
 .clear::after{content:""; clear:both; display: block;}
@@ -58,7 +59,7 @@ ul,ol {list-style: none;}
     margin-left:-240px;
     z-index: 988888899;
 }
-#imageLine>li{
+#imageLine li{
     width:100px;
     height:10px;
     margin: 0px 10px;
@@ -86,7 +87,7 @@ ul,ol {list-style: none;}
     z-index: 999;
 }
 #selectBox{
-    height:350px;
+    height:550px;
     background-color: #eee;
     position: relative;
 }
@@ -122,33 +123,72 @@ p.click{
 }
 
 .listBox{
-    padding-top:25px;
+    width:1020px;
+    padding-top:50px;
     margin-left:150px;
     position: absolute;
     left:400px;
+    z-index: 9999;
 }
-.listBox>li{
-    width:250px;
-    height:300px;
-    background-color: #fff;
+
+.listBox>a li{
+    width:300px;
+    height:400px;
     float:left;
     margin:0 20px;
+    overflow:hidden;
+    visibility: hidden;
+    background-color: #fff;
+    transition: 0.6s;
+    opacity:0;
 }
-.listBox.selected{
-    z-index: 99;
+.listBox.selected li{
+    visibility: visible;
+    transition: 0.6s;
+    opacity: 1;
 }
+/*================================선물 페이지===============================*/
+.forImgBox{
+    width:300px;
+    height: 300px;
+}
+.forImgBox>img{
+    height:100%;
+}
+.listBox li span{
+    display: block;
+    line-height: 50px;
+    height:50px;
+    padding:0px 15px;
+}
+.listBox li span:nth-of-type(2){
+    text-align: right;
+    
+}
+/*--------------------------정보 페이지---------------------------*/
 #infoPage{
     height:500px;
     overflow: hidden;
+    position:relative;
 }
 .infoBox{
     width:7612px;
 }
 .infoBox li{
-    float: left;
+    position: absolute;
+    top:0;
+    left:0;
     width:1900px;
     height:500px;
-    }
+    visibility: hidden;
+    opacity: 0;
+    transition:0.7s;
+}
+.infoBox li.on{
+    visibility: visible;
+    opacity: 1;
+    transition:0.7s;
+}
 .photoBox{
     width:900px;
     height: 500px;;
@@ -172,7 +212,7 @@ p.click{
     margin:20px 0px;
 }
 .linkBox{
-    width:150px;
+    width:200px;
     height:50px;
     font-size: 20px;
     line-height: 50px;
@@ -182,6 +222,33 @@ p.click{
 .linkBox a:hover{
     opacity: 0.8;
 }
+/*============================인포 롤링 버튼=================================*/
+#infoBtn{
+    height:20px;
+    position:absolute;
+    left:50%;
+    bottom:20px;
+    margin-left:-70px;
+    z-index: 8888888888;
+}
+#infoBtn>li{
+    width:20px;
+    height:20px;
+    background-color:#fff ;
+    border:2px solid#062f62 ;
+    float: left;
+    margin:0 3px;
+    border-radius: 100%;
+    transition:all 0.5s;
+}
+#infoBtn>li.on{
+    width:50px;
+    border-radius: 25px;
+    background-color: #062f62;
+    border: 2px solid #fff ;
+    transition:all 0.5s;
+}
+/*=============================================================*/
 #reviewPage{
     height:1600px;
     background-color: #eee;
@@ -234,8 +301,11 @@ p.click{
     background-color: #eee;
     float: left;
 }
+.reviewImg>img{
+    width:100%;
+}
 .reviewT{
-    font-size:30px;
+    font-size:25px;
 }
 .reviewText{
     width:800px;
@@ -264,4 +334,7 @@ p.click{
     background-color: #fff;
     float: left;
     margin: 70px 10px;
+}
+.instaList>li>img{
+    width:100%;
 }
