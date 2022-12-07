@@ -1,16 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Song+Myung&display=swap');
 @import url(header.css);
 @import url(footer.css);
-@font-face {
-    font-family: 'GmarketSansMedium';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-*{margin:0; padding:0;  box-sizing:border-box; font-family: 'GmarketSansMedium';}
-a{text-decoration: none; color:inherit}
-a:hover{color: #062f62;}
-ul,ol {list-style: none;}
+
 #wrap{width:1903px;}
 .clear::after{content:""; clear:both; display: block;}
 /*여기서부터 메인 내용*/
