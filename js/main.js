@@ -1,4 +1,12 @@
-
+//메뉴창
+const forList = document.querySelectorAll('.for');
+const listBoxes = document.querySelectorAll('.listBox');
+forList.forEach((forL,index)=>forL.addEventListener('click',()=>{
+    forList.forEach(forL=>forL.classList.remove('click'));
+    forL.classList.add('click');
+    listBoxes.forEach(listBox=>listBox.classList.remove('selected'))
+    listBoxes[index].classList.add('selected');
+}));
 //이미지 리스트
 const imageWrap = document.querySelector('#imageRoll');
 const imageRolles = imageWrap.querySelectorAll('li');

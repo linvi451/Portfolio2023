@@ -119,21 +119,24 @@ p.click{
     margin-left:150px;
     position: absolute;
     left:400px;
-    z-index: 9999;
 }
-
-.listBox>a li{
+.listBox>a{
+    display:inline-block;
+}
+.listBox li{
     width:300px;
     height:400px;
     float:left;
-    margin:0 20px;
+    margin:0 15px;
     overflow:hidden;
     visibility: hidden;
     background-color: #fff;
     transition: 0.6s;
     opacity:0;
+    z-index: -1;
 }
-.listBox.selected li{
+.listBox.selected a li{
+    z-index: 999999;
     visibility: visible;
     transition: 0.6s;
     opacity: 1;
@@ -194,6 +197,7 @@ p.click{
     height:200px;
     margin:150px 100px;
     float: left;
+   
 }
 .txB>p:first-child{
     font-size:40px;
@@ -231,6 +235,7 @@ p.click{
     margin:0 3px;
     border-radius: 100%;
     transition:all 0.5s;
+    transform-origin: center;
 }
 #infoBtn>li.on{
     width:50px;
@@ -238,6 +243,7 @@ p.click{
     background-color: #062f62;
     border: 2px solid #fff ;
     transition:all 0.5s;
+    transform-origin: center;
 }
 /*=============================================================*/
 #reviewPage{
