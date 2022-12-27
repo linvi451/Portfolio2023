@@ -17,15 +17,32 @@ products.map((product,index)=>{
                     <p class="productPrice">${product.price}</p>
                 </div>
             </a>
-            <div class="tagList">
-                <span>NEW</span>
-                <span>BEST</span>
+            <div class="iconList">
+                <div class="tagList">
+                    <span>NEW</span>
+                    <span>BEST</span>
+                </div>
+                <div class="shopList">
+                <span><i class="far fa-heart"></i></span>
+                <span><i class="fa-solid fa-cart-shopping"></i></span>
+                </div>
             </div>
         </div>
     `;
-    console.log(Plist,i);
     productBox.appendChild(Plist);
 }
 );
         
-//productList.appendChild(setList);
+//클릭 후 아이콘 알림
+const cartIcones = document.querySelectorAll('.fa-cart-shopping');
+const favorates = document.querySelectorAll('.fa-heart');
+cartIcones.forEach(cartIcon=>cartIcon.addEventListener('click',()=>{
+    alert('장바구니에 추가되었습니다');
+}))
+
+favorates.forEach(favorate=>{
+    favorate.addEventListener('click',()=>{
+    favorate.classList.toggle('fas');
+
+    })
+});

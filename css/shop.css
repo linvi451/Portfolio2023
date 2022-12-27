@@ -41,15 +41,16 @@
 }
 #productList{
     position: relative;
-    height:1800px;
+    height:1900px;
 }
 #productWrap{
     width:1200px;
-    height:1800px;
+    height:1900px;
     position:absolute;
     left:50%;
     margin-left:-600px;
 }
+
 .selectList{
     height:50px;
     display: flex;
@@ -60,9 +61,18 @@
 .selectList>li{
     margin:0 20px;
 }
+/*----------------------상품 박스----------------------*/
+.productbox{
+    height:1700px;
+}
+
 .productbox>li{
     float:left;
     margin:0 15px 30px;
+}
+.listBox{
+    width:270px;
+    height:420px;
 }
 .productImgBox{
     width:270px;
@@ -79,16 +89,49 @@
     font-size:20px;
     text-align: right;
 }
+/*///////////////////하단부 태그리스트////////////*/
+.iconList{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.tagList{
+    width:150px;
+    height:30px;
+}
 .tagList>span{
     text-align: center;
     display: inline-block;
     padding:5px;
     width:70px;
-    height:28px;
+    height:30px;
     color:#fff;
     background-color: #062f6e;
-    font-size: 15px;;
+    font-size: 15px;
+    line-height: 23px;
 }
 .tagList>span:last-of-type{
     background-color: #222;
+}
+.shopList{
+    display:flex ;
+    justify-content: space-between;
+    justify-items: center;
+    align-items: center;
+    width:65px;
+    height:30px;
+    line-height: 30px;
+}
+.shopList>span{
+    width:30px;
+    height:30px;
+    font-size:25px;
+}
+.fas-solid{
+    line-height:30px;
+    color:#222;
+    width:20px;
+    height:30px;
+    padding-top:4px;
 }
