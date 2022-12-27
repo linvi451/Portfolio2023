@@ -1,0 +1,94 @@
+@import url(reset.css);
+@import url(header.css);
+@import url(footer.css);
+/*==============================================================*/
+/*mainTitle*/
+#mainHead{
+    padding:70px;
+    width:100%;
+    height: 340px;
+    background-color: #062f6e;
+    position: relative;
+    overflow: hidden;
+}
+#titleImgBox{
+    width:400px;
+    height:400px;
+    position: absolute;
+    left:80%;
+    bottom:-150px;
+    overflow: hidden;
+}
+#titleImgBox>img{
+    width:100%;
+    opacity: .5;;
+}
+.titleTextBox{
+    width: 350px;;
+    position: absolute;
+    top:45%;
+    left:50%;
+    margin-left: -175px;
+}
+.titleTextBox>p{
+    text-align: center;
+    color:#fff;
+    font-size:70px;
+    font-family:'Song Myung';
+}
+.titleTextBox>p:last-of-type{
+    font-size:30px;
+}
+#productList{
+    position: relative;
+    height:1800px;
+}
+#productWrap{
+    width:1200px;
+    height:1800px;
+    position:absolute;
+    left:50%;
+    margin-left:-600px;
+}
+.selectList{
+    height:50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:50px;
+}
+.selectList>li{
+    margin:0 20px;
+}
+.productbox>li{
+    float:left;
+    margin:0 15px 30px;
+}
+.productImgBox{
+    width:270px;
+    height:270px;
+}
+.productImgBox>img{
+    width:100%;
+}
+.productTextBox>p:first-of-type{
+    font-size:20px;
+    font-weight: 700;
+}
+.productTextBox>p:last-of-type{
+    font-size:20px;
+    text-align: right;
+}
+.tagList>span{
+    text-align: center;
+    display: inline-block;
+    padding:5px;
+    width:70px;
+    height:28px;
+    color:#fff;
+    background-color: #062f6e;
+    font-size: 15px;;
+}
+.tagList>span:last-of-type{
+    background-color: #222;
+}
