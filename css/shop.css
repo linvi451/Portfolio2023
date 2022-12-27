@@ -41,11 +41,11 @@
 }
 #productList{
     position: relative;
-    height:1900px;
+    height:1400px;
 }
 #productWrap{
-    width:1200px;
-    height:1900px;
+    width:1300px;
+    height:900px;
     position:absolute;
     left:50%;
     margin-left:-600px;
@@ -63,7 +63,7 @@
 }
 /*----------------------상품 박스----------------------*/
 .productbox{
-    height:1700px;
+    height:1400px;
 }
 
 .productbox>li{
@@ -71,8 +71,8 @@
     margin:0 15px 30px;
 }
 .listBox{
-    width:270px;
-    height:420px;
+    width:280px;
+    height:400px;
 }
 .productImgBox{
     width:270px;
@@ -82,12 +82,14 @@
     width:100%;
 }
 .productTextBox>p:first-of-type{
-    font-size:20px;
+    margin-top: 10px;
+    font-size:15px;
     font-weight: 700;
 }
 .productTextBox>p:last-of-type{
-    font-size:20px;
+    font-size:18px;
     text-align: right;
+    padding-bottom: 20px;
 }
 /*///////////////////하단부 태그리스트////////////*/
 .iconList{
