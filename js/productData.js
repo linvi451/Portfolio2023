@@ -78,8 +78,8 @@
         Pname: '만월회 단체주문',
         src: "img/product_9.jpg",
         alt:"이미지0",
-        new: "NEW",
-        type:"BEST"
+        new: "",
+        type:""
     },
 
 ]
