@@ -43,9 +43,6 @@ productTypeTag.forEach((productTT,index)=>{
         productTT.remove()
     }
 })
-// if(productNewTag=""){
-//     productNewTag.remove();
-// }
 
 //클릭 후 아이콘 알림
 const cartIcones = document.querySelectorAll('.fa-cart-shopping');
